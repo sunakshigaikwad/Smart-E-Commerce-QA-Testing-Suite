@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "b6c8a9f5-0069-4f43-a4aa-6380069d001a",
+		"name": "Mock Payment API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46645474"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"user\": \"Sunakshi Gaikwad\",\r\n        \"card_number\": \"1234567890123456\",\r\n        \"amount\": \"499.99\",\r\n        \"status\": \"Success\",\r\n        \"timestamp\": \"2025-07-20T08:51:58.502419Z\",\r\n        \"ip_address\": \"127.0.0.1\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/transactions/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

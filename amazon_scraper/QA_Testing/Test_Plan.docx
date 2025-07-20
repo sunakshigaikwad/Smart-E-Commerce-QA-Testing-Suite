@@ -1,0 +1,62 @@
+Test Plan Document
+
+1. Project Overview
+The purpose of this document is to outline the testing strategy for a web-based Amazon Product Scraper application. The application is built using Django and integrates Selenium for product scraping and Postman for API testing. It also includes a mock payment module that simulates transactions using card, UPI, or QR methods.
+This project is being tested from both manual and automation perspectives to ensure that all core functionalities, APIs, and UI components behave as expected.
+
+2. Testing Objective
+The goal is to thoroughly validate the product’s functionality, user interface, and mock payment workflow. The testing process will cover both positive and negative scenarios, identify and log any bugs, and verify that the APIs and payment flows handle valid and invalid inputs correctly.
+
+3. Scope of Testing
+✔️ In Scope:
+Product search and display functionality
+Payment flow using Card, UPI, and QR methods
+API endpoint /api/transactions/ testing using Postman
+Selenium-based automation for search functionality
+UI layout validation and form field behavior
+
+❌ Out of Scope:
+Live integration with Amazon
+Actual online payments or payment gateway integration
+Penetration testing, security, or performance testing
+
+4. Types of Testing
+The following types of testing will be performed:
+Functional Testing – Verifying all features behave as expected
+UI Testing – Checking layout, inputs, form validations
+API Testing – Using Postman to test the backend endpoints
+Automation Testing – Using Selenium for repetitive functional flows
+Regression Testing – Retesting after code changes
+
+5. Test Environment Details
+Operating System: Windows 10
+Browser: Google Chrome
+Backend: Django (Python)
+Database: PostgreSQL
+Test Tools: Selenium, Postman
+Documentation: Excel (Test Cases, Bug Reports), Word
+IDE/Editor:Jupyter Notebook (for scripting)
+
+6. Test Deliverables
+Test Plan Document (this file)
+Test Case Sheet (Excel format)
+Bug Report (Excel format)
+Selenium script: test_search_product.py
+Postman API Collection (JSON file)
+Screenshots (optional – for defects or UI checks)
+Complete testing folder with organized documents
+
+7. Tools and Technologies Used
+
+| Area               | Tool/Technology        |
+| ------------------ | ---------------------- |
+| Web Framework      | Django (Python)        |
+| Web Scraping       | Selenium WebDriver     |
+| API Testing        | Postman                |
+| Database           | PostgreSQL             |
+| Test Documentation | Microsoft Excel / Word |
+| IDE/Code Editor    | Jupyter Notebook       |
+
+Prepared by: Sunakshi Gaikwad
+Date: 20-07-2025
+

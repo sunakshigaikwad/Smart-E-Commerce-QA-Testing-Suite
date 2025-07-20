@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Scraper</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'scraper/style.css' %}">
+    <style>
+        .pagination a {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background-color: #388e3c;
+        }
+
+        .pagination span {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    {% if user.is_authenticated %}
+      <p>Welcome, {{ user.first_name }}!</p>
+    {% endif %}
+
+    <div class="container">
+        <h1>Amazon Product Scraper</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="product" placeholder="Search a product" value="{{ product }}">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if df %}
+            <div style="margin-top: 20px;">{{ df|safe }}</div>
+
+            <div class="pagination" style="margin-top: 20px; text-align: center;">
+                {% if prev_page %}
+                    <a href="?product={{ product }}&page={{ prev_page }}">⬅️ Previous</a>
+                {% endif %}
+
+                <span>Page {{ page }}</span>
+
+                <a href="?product={{ product }}&page={{ next_page }}">Next ➡️</a>
+            </div>
+        {% endif %}
+        <script>
+    function calculateTotal() {
+        const price = parseFloat(document.querySelector('input[name="unit_price"]').value);
+        const qty = parseInt(document.querySelector('input[name="quantity"]').value);
+        document.getElementById('amountField').value = (price * qty).toFixed(2);
+    }
+   
+</body>
+</html>
